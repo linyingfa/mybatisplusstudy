@@ -1,7 +1,7 @@
 package com.lyf.mybatisplusstudy;
 
-import com.lyf.mybatisplusstudy.entity.User;
-import com.lyf.mybatisplusstudy.mapper.UserMapper;
+import com.lyf.mybatisplusstudy.sys.entity.User;
+import com.lyf.mybatisplusstudy.sys.mapper.UserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

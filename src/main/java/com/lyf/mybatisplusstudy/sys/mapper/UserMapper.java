@@ -1,8 +1,8 @@
-package com.lyf.mybatisplusstudy.mapper;
+package com.lyf.mybatisplusstudy.sys.mapper;
 
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.lyf.mybatisplusstudy.entity.User;
+import com.lyf.mybatisplusstudy.sys.entity.User;
 
 public interface UserMapper extends BaseMapper<User> {
 

@@ -1,4 +1,4 @@
-package com.lyf.mybatisplusstudy.entity;
+package com.lyf.mybatisplusstudy.sys.entity;
 
 import lombok.Data;
 
