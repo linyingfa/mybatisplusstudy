@@ -53,6 +53,17 @@
             <version>3.0.5</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.49</version>
+        </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>com.github.ikidou</groupId>-->
+            <!--<artifactId>TypeBuilder</artifactId>-->
+            <!--<version>1.0</version>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>com.baomidou</groupId>

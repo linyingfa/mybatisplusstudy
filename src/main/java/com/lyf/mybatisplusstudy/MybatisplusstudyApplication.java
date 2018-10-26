@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 
-//@SpringBootApplication
 @SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
 @MapperScan("com.lyf.mybatisplusstudy.sys.mapper")
 public class MybatisplusstudyApplication {

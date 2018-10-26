@@ -17,6 +17,7 @@
 package com.lyf.mybatisplusstudy.config;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -27,6 +28,7 @@ import org.springframework.context.annotation.Configuration;
  * @since 3.1.0 2018-02-05
  */
 @Configuration
+@MapperScan("com.lyf.mybatisplusstudy.sys.mapper")
 public class MybatisPlusConfig {
 
     /**

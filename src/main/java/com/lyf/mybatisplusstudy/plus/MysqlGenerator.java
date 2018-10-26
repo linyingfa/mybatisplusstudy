@@ -1,4 +1,4 @@
-package com.lyf.mybatisplusstudy;
+package com.lyf.mybatisplusstudy.plus;
 
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;

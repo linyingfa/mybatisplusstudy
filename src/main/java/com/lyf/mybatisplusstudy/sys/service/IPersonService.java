@@ -24,5 +24,5 @@ public interface IPersonService extends IService<Person> {
 
     List<Person> select();
 
-
+    List<Person> select(int page, int size);
 }

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lyf.mybatisplusstudy.sys.mapper.UserMapper">
+
+    <!--自定义返回结果  右边是实体类的变量，左边是数据库字段-->
+    <resultMap id="baseresult" type="com.lyf.mybatisplusstudy.sys.entity.User">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="age" jdbcType="VARCHAR" property="age"/>
+        <result column="email" jdbcType="VARCHAR" property="email"/>
+    </resultMap>
+
+
+    <insert id="insertUserInfo" parameterType="com.lyf.mybatisplusstudy.sys.entity.User">
+          insert  into user(name,age, email) values (#{name},#{age},#{email})
+    </insert>
+
+    <!--没毛病，传入的值会通过反射去parameterType的参数中获取。名字和类的变量字段一直就好-->
+    <update id="updateUserInfo" parameterType="com.lyf.mybatisplusstudy.sys.entity.User">
+         update user set
+         name = #{name,jdbcType=VARCHAR},
+         age = #{age,jdbcType=VARCHAR},
+         email = #{email,jdbcType=VARCHAR} where id = #{id}
+    </update>
+
+    <!--
+    用*就是返回表所有的,如果多数据，就返回慢了
+    下面这种写法是，要那些返回那些
+    如果不用返回，from 前面就不用写字段或者*了
+-->
+    <delete id="deleteUserInfo" parameterType="long">
+      delete from  user  where id = #{id}
+    </delete>
+
+    <select id="getUserList" parameterType="java.lang.String" resultMap="baseresult">
+		select * from user where name = #{userName}
+    </select>
+
+    <!--
+        用*就是返回表所有的,如果多数据，就返回慢了
+        下面这种写法是，要那些返回那些
+    -->
+    <select id="selectUserByID" parameterType="long" resultType="com.lyf.mybatisplusstudy.sys.entity.User">
+      select id,name,age,email  from  user  where id = #{id}
+    </select>
+</mapper>
