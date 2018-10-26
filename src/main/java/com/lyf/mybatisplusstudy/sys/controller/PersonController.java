@@ -3,6 +3,9 @@ package com.lyf.mybatisplusstudy.sys.controller;
 
 import com.lyf.mybatisplusstudy.sys.entity.Person;
 import com.lyf.mybatisplusstudy.sys.service.IPersonService;
+import com.lyf.mybatisplusstudy.utils.Result;
+import com.lyf.mybatisplusstudy.utils.ResultCode;
+import com.lyf.mybatisplusstudy.utils.ResultUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -47,15 +50,57 @@ public class PersonController {
 
     @ResponseBody
     @PostMapping(value = "/select")
-    public List<Person> select() {
+    public Result select() {
         List<Person> peoples = iPersonService.select();
-        return peoples;
+        Person p = peoples.get(0);
+
+
+        /**
+         * {
+         "code": 0,
+         "msg": "请求成功",
+         "data": [
+         {
+         "id": 1,
+         "name": "530",
+         "age": 23,
+         "email": "530810890@qq.com"
+         }
+         ]
+         }
+         */
+
+        return ResultUtils.success(peoples);
+
+
+        /**
+         * {
+         "code": 0,
+         "msg": "请求成功",
+         "data": {
+         "id": 1,
+         "name": "530",
+         "age": 23,
+         "email": "530810890@qq.com"
+         }
+         }
+         */
+//        return ResultUtils.success(p);
+
+        /**
+         * {
+         "code": 10101,
+         "msg": "验证码错误",
+         "data": null
+         }
+         */
+//        return ResultUtils.warn(ResultCode.PARAMETER_ERROR, "验证码错误");
     }
 
     @ResponseBody
     @PostMapping(value = "/selectpage")
     public List<Person> select(int page, int size) {
-        List<Person> peoples = iPersonService.select(page,size);
+        List<Person> peoples = iPersonService.select(page, size);
         return peoples;
     }
 }
