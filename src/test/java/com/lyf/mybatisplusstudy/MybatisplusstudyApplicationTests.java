@@ -1,7 +1,6 @@
 package com.lyf.mybatisplusstudy;
 
-import com.lyf.mybatisplusstudy.sys.entity.User;
-import com.lyf.mybatisplusstudy.sys.mapper.UserMapper;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,14 +15,6 @@ import java.util.List;
 public class MybatisplusstudyApplicationTests {
 
 
-    @Autowired
-    private UserMapper userMapper;
 
-    @Test
-    public void testSelect() {
-        // 根据 entity 条件，查询全部记录
-        List<User> userList = userMapper.selectList(null);
-        userList.forEach(System.out::println);
-    }
 
 }
